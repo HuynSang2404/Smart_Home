@@ -1,0 +1,48 @@
+name: iot_controller
+description: IoT Device Controller App - Control lights and fans via MQTT
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ✅ MQTT client cho Flutter (chạy Android/iOS/Windows)
+  mqtt_client: ^10.3.0
+
+
+  # ✅ State management (tùy chọn)
+  provider: ^6.1.1
+
+  # ✅ Giao diện đẹp hơn (iOS style icon)
+  cupertino_icons: ^1.0.6
+  http: ^1.5.0
+  shared_preferences: ^2.2.2
+  google_fonts: ^6.1.0
+  web: ^1.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # ✅ Linter version mới nhất, tránh cảnh báo cũ
+  flutter_lints: ^3.0.2
+
+flutter:
+  uses-material-design: true
+
+  # (Tùy chọn) Thêm assets nếu bạn có hình ảnh
+  # assets:
+  #   - assets/images/
+
+  # (Tùy chọn) Thêm font chữ nếu có
+  # fonts:
+  #   - family: Inter
+  #     fonts:
+  #       - asset: assets/fonts/Inter-Regular.ttf
+  #       - asset: assets/fonts/Inter-Bold.ttf

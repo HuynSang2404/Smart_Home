@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  # ============================
+  # Backend (Node.js server) - Kết nối Supabase
+  # ============================
+  backend:
+    build: ./backend
+    container_name: iot-backend
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      # Supabase PostgreSQL (thay thế local DB)
+      - DB_USER=${DB_USER:-postgres}
+      - DB_PASS=${DB_PASS}
+      - DB_NAME=${DB_NAME:-postgres}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT:-5432}
+
+      # MQTT
+      - MQTT_HOST=${MQTT_HOST:-broker.emqx.io}
+      - MQTT_PORT=${MQTT_PORT:-1883}
+      - MQTT_TOPIC=${MQTT_TOPIC:-demo/room1/sensor/state}
+
+# Lưu ý: PostgreSQL local đã được thay thế bằng Supabase cloud
+# Không cần volume ./infra/pgdata nữa

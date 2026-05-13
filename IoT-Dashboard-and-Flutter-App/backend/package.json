@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "IoT backend for ESP32 + DHT22 + Flutter Dashboard",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server_local.js",
+    "start:supabase": "node server_enhanced.js",
+    "start:basic": "node server_supabase.js",
+    "start:old": "node server.js",
+    "dev": "node --watch server_local.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.98.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mqtt": "^5.14.1",
+    "pg": "^8.16.3"
+  }
+}
