@@ -1,0 +1,33 @@
+# Node
+node_modules/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+.venv/
+env/
+
+# Flutter/Dart
+.dart_tool/
+build/
+.packages
+.pub/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.iml
+*.log
+
+# C/C++ (ESP32)
+.pio/
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Other
+BaoCaoNCKH_v5_final_extracted.txt
