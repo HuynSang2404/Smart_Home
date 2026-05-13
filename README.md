@@ -78,39 +78,52 @@ graph TB
 
 ### 🗂️ **Project Structure**
 
-```
+```text
 📦 NCKH Project
-├── 📱 IoT-Dashboard-and-Flutter-App/ # Thư mục chứa Frontend
+├── 📱 IoT-Dashboard-and-Flutter-App/ # Thư mục Frontend & Backend
 │   ├── app_flutter/                  # Flutter Web Application
 │   │   ├── lib/
-│   │   │   ├── main.dart             # Giao diện chính và kết nối MQTT
-│   │   │   └── voice_service.dart    # Logic xử lý nhận diện giọng nói
 │   │   └── pubspec.yaml
-│   └── README_APP_DOCUMENTATION.md   # Tài liệu chi tiết luồng xử lý ứng dụng
+│   ├── backend/                      # Node.js Backend Server
+│   └── docker-compose.yml
 │
-├── 🤖 firmware_esp32_super_mini/     # Code Firmware cho vi điều khiển
-│   └── esp32_super_mini_enhanced.ino # Source C++ chính cho ESP32-C3
+├── 🧠 src/                           # ML & Python Scripts
+│   ├── ml_server.py                  # Server Python chạy Flask API
+│   ├── train_model.py                # Script huấn luyện AI
+│   └── predict.py                    # Script dự đoán nguy cơ cháy
 │
-└── 🧠 src/                           # Backend / AI Server
-    └── ml_server.py                  # Server Python chạy mô hình dự báo
+├── 📊 data/                          # Visualizations, Logs & Datasets
+├── 🤖 models/                        # Pre-trained ML Models (XGBoost)
+├── 📄 README.md                      # Tài liệu chung của dự án
+└── 📄 README_APP_DOCUMENTATION.md    # Tài liệu chi tiết luồng xử lý ứng dụng
 ```
 
 ---
 
 ## 🚀 **Quick Start**
 
-### 1️⃣ **Chạy Machine Learning Server**
-Mở terminal tại thư mục chứa file python:
+### 1️⃣ **Chạy Backend Server (Node.js)**
+Mở terminal tại thư mục backend:
+```bash
+cd IoT-Dashboard-and-Flutter-App/backend
+npm install
+npm start
+# Server chạy ở http://localhost:8080
+```
+
+### 2️⃣ **Chạy Machine Learning Server**
+Mở terminal tại thư mục src:
 ```bash
 cd src
 python ml_server.py
 # Server chạy ở http://localhost:5000
 ```
 
-### 2️⃣ **Chạy Flutter Web App**
+### 3️⃣ **Chạy Flutter Web App**
 Mở terminal mới tại thư mục Flutter:
 ```bash
 cd IoT-Dashboard-and-Flutter-App/app_flutter
+flutter pub get
 flutter run -d chrome
 ```
 
